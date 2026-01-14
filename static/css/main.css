@@ -64,3 +64,30 @@ a {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* --- Mobile Styles --- */
+@media (max-width: 768px) {
+    body {
+        overflow: auto; /* Allow scrolling on mobile */
+        height: auto;
+    }
+
+    .window {
+        /* Override desktop positioning to create a static, stacked layout */
+        position: relative !important; 
+        top: auto !important;
+        left: auto !important;
+        z-index: auto !important;
+        width: 90%;
+        margin: 20px auto;
+        box-shadow: none;
+    }
+
+    .title-bar {
+        cursor: default; /* No dragging on mobile */
+    }
+
+    h1 {
+        font-size: 3em; /* Reduce font size for smaller screens */
+    }
+}
