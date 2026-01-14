@@ -1,35 +1,57 @@
+/* General Body Styles */
 body {
-    display: flex;
-    flex-direction: column; /* Change to column layout */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    position: relative;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Hide scrollbars from overflowing windows */
 }
+
+#desktop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Window Styles */
+.window {
+    position: absolute; /* This is key for placing windows anywhere */
+    border: 2px solid #333;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    min-width: 150px;
+    z-index: 10; /* Default z-index */
+}
+
+.title-bar {
+    background-color: #000080; /* Classic Windows blue */
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    cursor: move; /* Indicates this is draggable */
+    user-select: none; /* Prevents text selection while dragging */
+}
+
+.window-content {
+    padding: 10px;
+}
+
+/* Specific styles for content */
+.window-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 h1 {
     font-size: 6em;
     color: red;
     text-transform: uppercase;
     animation: blink 1s infinite;
-    position: relative;
-    margin-bottom: 10px; /* Adjust the space below the h1 */
-    z-index: 1;
+    margin: 0;
 }
-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    max-width: 100%;
-    height: auto;
-}
+
 a {
-    position: relative;
-    z-index: 1;
     text-decoration: underline;
     color: red;
     font-size: 1.5em;
@@ -37,11 +59,8 @@ a {
     margin-top: 1em;
     text-align: center;
 }
+
 @keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
